@@ -1,24 +1,36 @@
-import 'package:building_company/pages/login.dart';
+import 'package:building_company/logic/models/mysql.dart';
 import 'package:flutter/material.dart';
 
+void main() async {
+  var mysql = Mysql(); // Crear una instancia de la clase Mysql
+  bool isConnected = await mysql.testConnection(); // Llamar al método desde la instancia
 
-void main() => runApp(MyApp());
+  if (isConnected) {
+    print('La base de datos está conectada');
+    runApp(MyApp());
+  } else {
+    print('No se pudo establecer la conexión a la base de datos');
+    // Puedes manejar el caso donde la conexión falla, por ejemplo, mostrando un mensaje o cerrando la aplicación.
+  }
+}
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Mini Apps',
-      initialRoute: 'login',
-      routes: {
-        'login': (BuildContext) => const Login(),
-      },
-      );
+      home: Scaffold(
+        appBar: AppBar(title: Text('MyApp')),
+        body: Center(
+          child: Text('MyApp Body'),
+        ),
+      ),
+    );
   }
-
 }
+
+
 /*import 'package:building_company/pages/login.dart';
 import 'package:flutter/material.dart';
 
