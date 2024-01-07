@@ -1,0 +1,26 @@
+body{
+    height: 108vh;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    background: linear-gradient(27deg,#34495e 50%,#2c3e50 50% );
+}
+.contenedor{
+   margin:250px;
+}
+.contrato{
+    margin: 40px;
+    padding: 0px;
+
+    border-radius: 55px;
+    font-size: 50px;
+    color: white;
+    
+}
+.contrato2{
+    font-size: 25px;
+    color: white;
+    margin :20px;
+}
+.footer{
+    background-color: black;
+}
